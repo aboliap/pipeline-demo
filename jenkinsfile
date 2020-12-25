@@ -1,0 +1,57 @@
+pipeline{
+
+agent any
+
+stages{
+      stage('clone the code')
+      {
+      steps{
+      
+     sh 'echo downloding the code from github repo'
+      
+      }
+      
+      
+      }
+
+stage('build the code'){
+      
+      steps{
+      
+      sh 'echo code is building'
+      
+      }   
+      
+      }
+
+stage('deploy the code'){
+      
+      steps{
+      
+      sh 'echo deolying the code to dev environment'
+      
+      }
+         
+      }
+stage('functional testing'){
+      
+      steps{
+      
+      sh 'echo completing functional testing'
+      
+      }
+      
+     }
+stage('get approval'){
+  
+  input "please approve for deployment?"
+  }
+stage('deply to QA'){
+
+  steps{
+
+  sh 'echo deply to QA'
+}
+}
+}
+}
