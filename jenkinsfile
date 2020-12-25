@@ -43,8 +43,9 @@ stage('functional testing'){
       
      }
 stage('get approval'){
-  
+  steps{
   input "please approve for deployment?"
+  }
   }
 stage('deply to QA'){
 
